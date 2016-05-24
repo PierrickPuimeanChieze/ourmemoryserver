@@ -33,6 +33,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 //	compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile("org.springframework.boot:spring-boot-starter-web")
+//	compile("org.springframework.boot:spring-boot-starter-security")
+
 	compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 	compile "org.projectlombok:lombok:1.16.8"
 	testCompile('org.springframework.boot:spring-boot-starter-test')

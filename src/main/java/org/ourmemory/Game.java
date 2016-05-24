@@ -21,6 +21,7 @@ public class Game {
     private String firstName;
     private String name;
     @JsonProperty("birthdate")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private LocalDate birthDate;
     private int age;
     private String classe;

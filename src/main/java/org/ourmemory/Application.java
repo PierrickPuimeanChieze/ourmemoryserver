@@ -20,19 +20,8 @@ import java.util.List;
 @SpringBootApplication
 public class Application {
 
-    @Autowired
-    GameRepository gameRepository;
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
     }
 
-    @Bean(name = "OBJECT_MAPPER_BEAN")
-    public ObjectMapper jsonObjectMapper() {
-        return Jackson2ObjectMapperBuilder.json()
-                .serializationInclusion(JsonInclude.Include.NON_NULL) // Don’t include null values
-                .featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS) //ISODate
-                .modules(new JavaTimeModule())
-                .build();
-    }
 }
