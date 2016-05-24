@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+---
+
+#The production deployment need to be linked to a mongo container (which normally expose port 27017) under the alias "mongo"
+# example, exposing the port 9090 : docker run --name testMemory -p 9090:8080 --link some-mongo:mongo pierrickpuimeanchieze/ourmemory-server
+spring:
+    profiles: production
+    data:
+      mongodb:
+        host: ${MONGO_PORT_27017_TCP_ADDR}
+        port: ${MONGO_PORT_27017_TCP_PORT}
+

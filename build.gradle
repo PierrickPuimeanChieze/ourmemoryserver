@@ -16,7 +16,7 @@ apply plugin: 'java'
 apply plugin: 'spring-boot'
 
 jar {
-	baseName = 'server'
+	baseName = 'ourmemory-server'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -43,4 +43,10 @@ dependencies {
 
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.12'
+}
+
+
+task prepareDockerBuild(type: Copy, dependsOn: build) {
+	from "build/libs"
+	into "docker"
 }
