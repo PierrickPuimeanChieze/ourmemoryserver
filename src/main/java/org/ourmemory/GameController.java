@@ -25,7 +25,7 @@ public class GameController {
     }
     @RequestMapping(method = RequestMethod.POST)
     public Game postGame(@RequestBody Game game) {
-        if (game.getId() != null) {
+        if (!StringUtils.isEmpty(game.getId())) {
             throw new IllegalArgumentException("a new game should not have an id");
         }
         gameRepository.save(game);
